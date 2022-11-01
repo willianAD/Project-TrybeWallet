@@ -1,4 +1,4 @@
-import { QUERY_COINS } from '../actions';
+import { SAVE_COINS, QUERY_EXPENSES } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -9,9 +9,15 @@ const INITIAL_STATE = {
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case QUERY_COINS:
+  case SAVE_COINS:
     return {
       ...state,
+      currencies: action.payload,
+    };
+  case QUERY_EXPENSES:
+    return {
+      ...state,
+      expenses: action.payload,
     };
   default:
     return state;

@@ -1,14 +1,20 @@
-const USER_LOGIN = 'USER_LOGIN';
-const QUERY_COINS = 'QUERY_COINS';
+export const USER_LOGIN = 'USER_LOGIN';
+export const SAVE_COINS = 'SAVE_COINS';
+export const QUERY_EXPENSES = 'QUERY_EXPENSES';
 
-const userLogin = (payload) => ({
+export const userLogin = (payload) => ({
   type: USER_LOGIN,
   payload,
 });
 
-const funcWallet = (payload) => ({
-  type: QUERY_COINS,
+export const saveCoins = (payload) => ({
+  type: SAVE_COINS,
   payload,
 });
 
-export { userLogin, funcWallet, USER_LOGIN, QUERY_COINS };
+export const queryExpenses = () => ({
+  type: QUERY_EXPENSES,
+  payload,
+});
+
+export const fetchAPI = () => fetch('https://economia.awesomeapi.com.br/json/all').then((response) => response.json());
