@@ -12,7 +12,7 @@ export const saveCoins = (payload) => ({
   payload,
 });
 
-export const queryExpenses = () => ({
+export const queryExpenses = (payload) => ({
   type: QUERY_EXPENSES,
   payload,
 });
