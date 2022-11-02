@@ -30,8 +30,6 @@ class WalletForm extends Component {
 
   receiveAPI = async () => {
     const { dispatch } = this.props;
-    // const array = Object.keys(await fetchAPI());
-    // array.splice(1, 1);
     const arrayExchange = await fetchAPI();
     delete arrayExchange.USDT;
     const array = Object.keys(arrayExchange);
