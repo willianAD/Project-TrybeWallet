@@ -1,4 +1,4 @@
-import { SAVE_COINS, QUERY_EXPENSES } from '../actions';
+import { SAVE_COINS, QUERY_EXPENSES, QUERY_EXPENSES_DELETE } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -18,6 +18,11 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses, action.payload],
+    };
+  case QUERY_EXPENSES_DELETE:
+    return {
+      ...state,
+      expenses: action.payload,
     };
   default:
     return state;

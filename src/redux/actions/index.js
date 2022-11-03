@@ -1,6 +1,7 @@
 export const USER_LOGIN = 'USER_LOGIN';
 export const SAVE_COINS = 'SAVE_COINS';
 export const QUERY_EXPENSES = 'QUERY_EXPENSES';
+export const QUERY_EXPENSES_DELETE = 'QUERY_EXPENSES_DELETE';
 
 export const userLogin = (payload) => ({
   type: USER_LOGIN,
@@ -14,6 +15,11 @@ export const saveCoins = (payload) => ({
 
 export const queryExpenses = (payload) => ({
   type: QUERY_EXPENSES,
+  payload,
+});
+
+export const queryExpensesDelete = (payload) => ({
+  type: QUERY_EXPENSES_DELETE,
   payload,
 });
 
