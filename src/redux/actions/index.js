@@ -2,6 +2,8 @@ export const USER_LOGIN = 'USER_LOGIN';
 export const SAVE_COINS = 'SAVE_COINS';
 export const QUERY_EXPENSES = 'QUERY_EXPENSES';
 export const QUERY_EXPENSES_DELETE = 'QUERY_EXPENSES_DELETE';
+export const QUERY_EXPENSES_EDIT = 'QUERY_EXPENSES_EDIT';
+export const QUERY_EXPENSES_EDIT_TRUE = 'QUERY_EXPENSES_EDIT_TRUE';
 
 export const userLogin = (payload) => ({
   type: USER_LOGIN,
@@ -20,6 +22,16 @@ export const queryExpenses = (payload) => ({
 
 export const queryExpensesDelete = (payload) => ({
   type: QUERY_EXPENSES_DELETE,
+  payload,
+});
+
+export const queryExpensesEdit = (payload) => ({
+  type: QUERY_EXPENSES_EDIT,
+  payload,
+});
+
+export const queryExpensesEditTrue = (payload) => ({
+  type: QUERY_EXPENSES_EDIT_TRUE,
   payload,
 });
 

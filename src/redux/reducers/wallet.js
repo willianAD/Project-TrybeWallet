@@ -1,4 +1,5 @@
-import { SAVE_COINS, QUERY_EXPENSES, QUERY_EXPENSES_DELETE } from '../actions';
+import { SAVE_COINS, QUERY_EXPENSES_EDIT_TRUE, QUERY_EXPENSES,
+  QUERY_EXPENSES_DELETE, QUERY_EXPENSES_EDIT } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -6,6 +7,21 @@ const INITIAL_STATE = {
   editor: false, // valor booleano que indica de uma despesa está sendo editada
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
 };
+
+const expensesEdit = (expenses, payload) => expenses.map((expense) => {
+  console.log(expense, payload);
+  if (+payload.id === +expense.id) {
+    return {
+      ...expense,
+      value: payload.value,
+      description: payload.description,
+      currency: payload.currency,
+      method: payload.method,
+      tag: payload.tag,
+    };
+  }
+  return expense;
+});
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -23,6 +39,18 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: action.payload,
+    };
+  case QUERY_EXPENSES_EDIT:
+    return {
+      ...state,
+      // idToEdit: action.payload,
+      editor: false,
+      expenses: expensesEdit(state.expenses, action.payload),
+    };
+  case QUERY_EXPENSES_EDIT_TRUE:
+    return {
+      ...state,
+      editor: true,
     };
   default:
     return state;

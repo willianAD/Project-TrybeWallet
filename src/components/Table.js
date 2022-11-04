@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { queryExpensesDelete } from '../redux/actions';
+import { queryExpensesDelete,
+  queryExpensesEdit, queryExpensesEditTrue } from '../redux/actions';
 
 class Table extends Component {
   buttonRemove = ({ target }) => {
     const { expenses, dispatch } = this.props;
     const expenseRemove = expenses.filter((expense) => +target.id !== +expense.id);
     dispatch(queryExpensesDelete(expenseRemove));
+  };
+
+  buttonEdit = ({ target }) => {
+    const { expenses, dispatch } = this.props;
+    const expenseEdit = expenses.filter((expense) => +target.id === +expense.id);
+    dispatch(queryExpensesEdit(expenseEdit[0].id));
+    dispatch(queryExpensesEditTrue(true));
   };
 
   render() {
@@ -43,6 +51,14 @@ class Table extends Component {
               <td>
                 <button
                   id={ coin.id }
+                  data-testid="edit-btn"
+                  type="button"
+                  onClick={ this.buttonEdit }
+                >
+                  Editar
+                </button>
+                <button
+                  id={ coin.id }
                   type="button"
                   data-testid="delete-btn"
                   onClick={ this.buttonRemove }
@@ -53,7 +69,6 @@ class Table extends Component {
             </tr>
           ))}
         </tbody>
-
       </table>
     );
   }
