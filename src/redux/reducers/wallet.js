@@ -9,7 +9,6 @@ const INITIAL_STATE = {
 };
 
 const expensesEdit = (expenses, payload) => expenses.map((expense) => {
-  console.log(expense, payload);
   if (+payload.id === +expense.id) {
     return {
       ...expense,
