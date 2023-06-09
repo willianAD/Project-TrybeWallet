@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import logo from '../images/trybeWallet.png';
+import user from '../images/user.png';
+import coins from '../images/coins.png';
 
 class Header extends Component {
   render() {
@@ -12,9 +15,17 @@ class Header extends Component {
       }, 0);
     return (
       <header>
-        <span data-testid="email-field">{ email }</span>
-        <span data-testid="total-field">{ total.toFixed(2) }</span>
-        <span data-testid="header-currency-field">BRL</span>
+        <div className="div-header">
+          <img src={ logo } alt="logo" />
+          <div className="div-header-values">
+            <img src={ coins } alt="coins" />
+            { `Total de despesas: ${total.toFixed(2)} BRL` }
+          </div>
+          <div className="div-header-user">
+            <img src={ user } alt="user" />
+            { email }
+          </div>
+        </div>
       </header>
     );
   }

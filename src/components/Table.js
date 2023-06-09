@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { queryExpensesDelete,
   queryExpensesEdit, queryExpensesEditTrue } from '../redux/actions';
+import edit from '../images/edit.png';
+import del from '../images/delete.png';
 
 class Table extends Component {
   buttonRemove = ({ target }) => {
@@ -21,23 +23,31 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <table>
+      <table className="div-table">
         <thead>
           <tr>
             <th value="Descrição">Descrição</th>
+            <div className="div-traco" />
             <th value="Tag">Tag</th>
+            <div className="div-traco" />
             <th value="Método de pagamento">Método de pagamento</th>
+            <div className="div-traco" />
             <th value="Valor">Valor</th>
+            <div className="div-traco" />
             <th value="Moeda">Moeda</th>
+            <div className="div-traco" />
             <th value="Câmbio utilizado">Câmbio utilizado</th>
+            <div className="div-traco" />
             <th value="Valor convertido">Valor convertido</th>
+            <div className="div-traco" />
             <th value="Moeda de conversão">Moeda de conversão</th>
+            <div className="div-traco" />
             <th value="Editar/Excluir">Editar/Excluir</th>
           </tr>
         </thead>
         <tbody>
           { expenses.map((coin) => (
-            <tr key={ coin.id }>
+            <tr key={ coin.id } className="tr-expenses">
               <td>{ coin.description }</td>
               <td>{ coin.tag }</td>
               <td>{ coin.method }</td>
@@ -51,19 +61,19 @@ class Table extends Component {
               <td>
                 <button
                   id={ coin.id }
-                  data-testid="edit-btn"
                   type="button"
+                  className="edit-btn"
                   onClick={ this.buttonEdit }
                 >
-                  Editar
+                  <img src={ edit } alt="edit" />
                 </button>
                 <button
                   id={ coin.id }
                   type="button"
-                  data-testid="delete-btn"
+                  className="delete-btn"
                   onClick={ this.buttonRemove }
                 >
-                  Excluir
+                  <img src={ del } alt="delete" />
                 </button>
               </td>
             </tr>

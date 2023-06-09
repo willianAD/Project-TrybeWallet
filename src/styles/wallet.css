@@ -1,0 +1,209 @@
+.div-wallet {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.div-header-form {
+  margin-top: 2%;
+  border: 3px solid white;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 80%;
+  height: 650px;
+}
+
+.div-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 400px;
+}
+
+.div-header-values img {
+  width: 70px;
+  margin: 3%;
+}
+
+.div-header-values {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 47, 255);
+  font-size: 30px;
+}
+
+
+.div-header-user img {
+  width: 45px;
+  margin: 3%;
+}
+
+.div-header-user {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 114, 0);
+  font-size: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-1 {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+.div-2 {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin-bottom: 2%;
+
+}
+
+.label-wallet {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: blue;
+  font-size: 20px;
+  width: 40%;
+}
+
+.description-input {
+  width: 70%;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  border-color: blue;
+  color: blue;
+}
+
+.tag-input {
+  width: 35%;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px;
+  border-color: blue;
+  color: blue;
+}
+
+.value-input {
+  width: 30%;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  border-color: blue;
+  color: blue;
+}
+
+.method-input {
+  width: 40%;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  border-color: blue;
+  color: blue;
+}
+
+.currency-input {
+  width: 20%;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  border-color: blue;
+  color: blue;
+}
+
+.button-add {
+  margin: 2%;
+  background-color: rgba(0, 201, 64, 0.927);
+  color: white;
+  border-radius: 15px;
+  width: 250px;
+  height: 50px;
+  border: 3px solid;
+  font-size: 20px;
+}
+
+.button-add:hover {
+  animation: pulsate 2s ease-in-out;
+}
+
+@keyframes pulsate {
+  0%{
+    box-shadow:
+    0 0 25px rgb(0, 234, 255),
+    0 0 50px rgba(253, 26, 26, 0.705);
+  }
+}
+
+.div-table {
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 700px;
+  border-radius: 25px;
+  background-color: rgba(0, 68, 255, 0.9);
+}
+
+.div-traco {
+  border: 2px solid white;
+  margin-top: 27px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+th {
+  font-size: 25px;
+  padding: 30px;
+  color: white;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tr-expenses {
+  display: flex;
+  justify-content: space-around;
+  width: 98%;
+  font-size: 22px;
+  padding: 30px;
+  color: rgba(254, 240, 152, 0.800);
+}
+
+button img {
+  width: 40px;
+  height: 35px;
+}
+
+td button {
+  margin-left: 15px;
+}
+
+.edit-btn {
+  background-color: rgba(0, 81, 255, 0.9);
+  border: 0;
+}
+
+.edit-btn:hover {
+  animation: pulsate 2s ease-in-out;
+}
+
+.delete-btn {
+  background-color: rgba(0, 81, 255, 0.9);
+  border: 0;
+}
+
+.delete-btn:hover {
+  animation: pulsate 2s ease-in-out;
+}

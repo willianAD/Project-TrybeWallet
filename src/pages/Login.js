@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { userLogin } from '../redux/actions';
+import logo from '../images/trybeWallet.png';
+import '../styles/login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -39,37 +41,41 @@ class Login extends React.Component {
   render() {
     const { email, password, buttonDisabled } = this.state;
     return (
-      <div>
-        <label htmlFor="email">
-          <input
-            id="email"
-            data-testid="email-input"
-            type="email"
-            name="email"
-            value={ email }
-            placeholder="E-mail"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="password">
-          <input
-            id="password"
-            data-testid="password-input"
-            type="password"
-            name="password"
-            value={ password }
-            placeholder="password"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          type="button"
-          disabled={ buttonDisabled }
-          onClick={ this.buttonClick }
-        >
-          Entrar
-        </button>
-      </div>
+      <section className="section-login">
+        <div className="div-login">
+          <img src={ logo } alt="logo" />
+          <label htmlFor="email" className="label">
+            <input
+              id="email"
+              className="email-input"
+              type="email"
+              name="email"
+              value={ email }
+              placeholder="E-mail"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="password" className="label">
+            <input
+              id="password"
+              className="password-input"
+              type="password"
+              name="password"
+              value={ password }
+              placeholder="password"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            type="button"
+            className="button-login"
+            disabled={ buttonDisabled }
+            onClick={ this.buttonClick }
+          >
+            Entrar
+          </button>
+        </div>
+      </section>
     );
   }
 }
