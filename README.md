@@ -18,6 +18,10 @@ Uma aplicação que computa gastos em diferentes moedas e converta tudo para uma
 
 1. Clone este repositório:
 
+Poderá ser acessado através deste link [clique aqui](https://willianad.github.io/Project-TrybeWallet/).
+
+ou
+
 HTTPS:
 
 Use o comando: `git clone https://github.com/willianAD/Project-TrybeWallet.git`
